@@ -1,0 +1,25 @@
+<div class="class">
+    <h2>Agenda</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div>
+            <label for="nome">Nome: </label>
+            <input type="text" class="form-control" name="nome" id="nome" [(ngModel)]="pessoa.nome">
+        </div>
+        <div>
+            <label for="sobrenome">Sobrenome: </label>
+            <input type="text" class="form-control" name="sobrenome" id="sobrenome" [(ngModel)]="pessoa.sobrenome">
+        </div>
+        <div>
+            <label for="telefone">Telefone: </label>
+            <input type="text" class="form-control" name="telefone" id="telefone" [(ngModel)]="pessoa.telefone">
+        </div>
+        <input type="submit" class="btn btn-primary mt-4" value="Enviar">
+    </form>
+
+    <ul>
+        <li *ngFor="let pessoa of pessoas">
+            Nome: {{pessoa.nome}} - Sobrenome: {{pessoa.sobrenome}} - Telefone: {{pessoa.telefone}}
+            <button (click)="removePessoa(pessoa)">Remover</button>
+        </li>
+    </ul>
+</div>
